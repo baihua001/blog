@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--核心配置文件-->
+<configuration>
+
+    <!--引入外部配置文件-->
+    <properties resource="druid.properties"></properties>
+
+<!--    <settings>-->
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+<!--    </settings>-->
+
+    <!--实体类的别名-->
+    <typeAliases>
+        <package name="cn.tf.blog.bean"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="cn.tf.blog.web.util.DruidDataSourceFactory">
+                <property name="driverClassName" value="${driverClassName}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="cn/tf/blog/dao/UserDao.xml"/>
+        <mapper resource="cn/tf/blog/dao/CommentDao.xml"/>
+        <mapper resource="cn/tf/blog/dao/BlogDao.xml"/>
+        <mapper resource="cn/tf/blog/dao/FavoriteDao.xml"/>
+    </mappers>
+</configuration>

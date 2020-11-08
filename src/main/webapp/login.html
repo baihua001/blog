@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/login.css" />
+		<link rel="stylesheet" href="css/footer&cbl.css" />
+		<link rel="stylesheet" href="css/daohang.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<script type="text/javascript" src="js/templet.js" ></script>
+		<script type="text/javascript" src="js/hp.js" ></script>
+		<title>登录</title>
+		<script>
+
+			$(function () {
+				$("#denglu").click(function(){
+					$.post("loginUserServlet", $("#loginForm").serialize(), function (data) {
+						if (data == "登陆成功！") {
+							alert(data);
+							window.location.href = "findBlogByPageAndreaderSeverlet";
+						} else {
+							alert(data);
+						}
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<div class="main">
+			<div class="container">
+				<div class="c2">
+					<a href=""></a><span>
+						<img src="img/qifeiye.png" />
+					</span></a>
+				</div>
+				<div class="c3">
+					<form id="loginForm">
+						<div class="form-group">
+    						<label for="username">用户名</label>
+    						<input type="text" class="form-control" id="username" name="username" value="18224008302" required>
+  						</div>
+  						<div class="form-group">
+    						<label for="password">密码</label>
+    						<input type="password" class="form-control" id="password" name="password" value="aa870222977" required>
+  						</div>
+  						<div class="c3-1">
+							<button id="denglu" type="button" class="btn btn-default btn1">登录</button>
+							<a href="register.html" type="button" class="btn btn-default btn2">注册</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		</div>
+
+	</body>
+</html>
