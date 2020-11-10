@@ -24,5 +24,7 @@ public class DelBlogByIdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
+
+
     }
 }
